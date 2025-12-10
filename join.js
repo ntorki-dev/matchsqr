@@ -75,6 +75,11 @@ export async function render(){
       try{ localStorage.setItem(`ms_nick_${code}`, nickname); }catch{}
       location.hash = '#/game/' + code;
     }
-    catch(e){ toast(e.message||'Failed to join'); }
+   catch(e) {
+    if (e.message === 'room_full' || e?.data?.error === 'room_full') {
+        toast('This room is full. Maximum 8 players allowed.');
+        return;
+    }
+    toast(e.message || 'Failed to join'); }
   };
 }
