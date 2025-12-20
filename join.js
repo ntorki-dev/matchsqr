@@ -10,8 +10,14 @@ export async function render(){
       <div style="max-width:420px;margin:28px auto;">
         <h2>Join a game</h2>
         <div class="grid">
-          <input id="gameId" class="input" placeholder="Game code">
-          <input id="nickname" class="input" placeholder="Nickname">
+          <div class="fl-field">
+            <input id="gameId" class="input" placeholder=" " autocomplete="off">
+            <label for="gameId">Game code</label>
+          </div>
+          <div class="fl-field">
+            <input id="nickname" class="input" placeholder=" " autocomplete="nickname">
+            <label for="nickname">Nickname</label>
+          </div>
           <button id="joinBtn" class="btn" style="margin-top:8px;">Join</button>
         </div>
       </div>
