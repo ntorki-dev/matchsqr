@@ -528,7 +528,12 @@ async function renderRegister(){
             <input id="reg_dob" class="input" type="date" required>
             <label for="reg_dob">Birthdate</label>
           </div>
-          
+           <!-- Row 3 -->
+          <div class="inline-actions" style="grid-column:1;grid-row:3;">
+            <label class="inline-actions"><input type="radio" name="reg_gender" value="male"> <span>Male</span></label>
+            <label class="inline-actions"><input type="radio" name="reg_gender" value="female"> <span>Female</span></label>
+          </div>
+          <div style="grid-column:2;grid-row:3;"></div>
           <div class="fl-field" style="grid-column:1;grid-row:4;">
             <input id="reg_email" class="input" placeholder=" " type="email" autocomplete="email">
             <label for="reg_email">Email</label>
