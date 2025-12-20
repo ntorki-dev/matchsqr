@@ -7,25 +7,6 @@ const BASE = (location.href.split('#')[0] || '').replace(/index\.html?$/,'');
 const URL_ACCOUNT = `${BASE}#/account`;
 const URL_RESET   = `${BASE}#/reset`;   // CHANGED to dedicated route
 
-/* ------------------------------- Floating Birthdate ------------------------------ */
-function wireFloatingDate(inputId){
-  const input = document.getElementById(inputId);
-  if (!input) return;
-
-  const wrap = input.closest('.fl-field');
-  if (!wrap) return;
-
-  const sync = () => {
-    if (input.value) wrap.classList.add('filled');
-    else wrap.classList.remove('filled');
-  };
-
-  sync();
-  input.addEventListener('change', sync);
-  input.addEventListener('blur', sync);
-}
-
-
 /* -------------------------------- Utilities -------------------------------- */
 
 function parseHashQuery() {
@@ -487,8 +468,7 @@ async function renderProfile(user){
         </div>
       </div>
     </div>`;
- wireFloatingDate('pf_dob');
-  await renderHeader(); ensureDebugTray();
+   await renderHeader(); ensureDebugTray();
 
   $('#pf_save').onclick = async () => {
     const newName = ($('#pf_name')?.value||'').trim();
@@ -572,8 +552,7 @@ async function renderRegister(){
         <div id="feedbackArea" class="grid"></div>
       </div>
     </div>`;
-  wireFloatingDate('reg_dob');
-  await renderHeader(); ensureDebugTray();
+    await renderHeader(); ensureDebugTray();
 
   $('#reg_submit').onclick = async () => {
     const name = ($('#reg_name')?.value||'').trim();
