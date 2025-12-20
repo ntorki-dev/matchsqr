@@ -828,14 +828,24 @@ body.is-game #answerWide {
   background: transparent;
 }
 
+/* Float for normal inputs when focused or when they have text */
 .fl-field .input:focus + label,
-.fl-field .input:not(:placeholder-shown) + label,
-.fl-field .input:valid + label{
+.fl-field .input:not(:placeholder-shown) + label{
   top: 6px;
   transform: translateY(0);
-  font-size: 11px;
+  font-size: 10px;
   color: #475569;
 }
+
+/* Float for date inputs when focused or when JS marks them as filled */
+.fl-field .input[type="date"]:focus + label,
+.fl-field.filled label{
+  top: 6px;
+  transform: translateY(0);
+  font-size: 10px;
+  color: #475569;
+}
+
 
 /* Ensure placeholder trick works but stays invisible */
 .fl-field .input::placeholder{
