@@ -805,3 +805,41 @@ body.is-game #answerWide {
   }
 }
 
+/* Floating labels */
+.fl-field{
+  position: relative;
+  width: 100%;
+}
+
+.fl-field .input{
+  padding-top: 18px;
+  padding-bottom: 8px;
+}
+
+.fl-field label{
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all .15s ease;
+  background: transparent;
+}
+
+.fl-field .input:focus + label,
+.fl-field .input:not(:placeholder-shown) + label,
+.fl-field .input:valid + label{
+  top: 6px;
+  transform: translateY(0);
+  font-size: 11px;
+  color: #475569;
+}
+
+/* Ensure placeholder trick works but stays invisible */
+.fl-field .input::placeholder{
+  color: transparent;
+}
+
+
