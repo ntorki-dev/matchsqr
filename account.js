@@ -194,8 +194,14 @@ async function renderLogin(){
       <div class="host-wrap">
         <h2>Login</h2>
         <div id="loginCard" class="grid">
-          <input id="email" class="input" placeholder="Email" type="email" autocomplete="email">
-          <input id="password" class="input" placeholder="Password" type="password" autocomplete="current-password">
+          <div class="fl-field">
+            <input id="email" class="input" placeholder=" " type="email" autocomplete="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="fl-field">
+            <input id="password" class="input" placeholder=" " type="password" autocomplete="current-password">
+            <label for="password">Password</label>
+          </div>
           <label class="help"><input id="remember" type="checkbox"> Remember me</label>
           <button id="loginBtn" class="btn">Login</button>
           <div class="inline-actions">
@@ -242,7 +248,10 @@ async function renderForgotPassword(){
       <div class="host-wrap">
         <h2>Forgot password</h2>
         <div id="forgotCard" class="grid">
-          <input id="fp_email" class="input" placeholder="Email" type="email" autocomplete="email">
+          <div class="fl-field">
+            <input id="fp_email" class="input" placeholder=" " type="email" autocomplete="email">
+            <label for="fp_email">Email</label>
+          </div>
           <button id="fp_send" class="btn">Send reset link</button>
           <div class="inline-actions">
             <a class="help" href="#/login">Back to Login</a>
@@ -281,8 +290,14 @@ async function renderResetPassword(ctx){
       <div class="host-wrap">
         <h2>Reset password</h2>
         <div id="resetCard" class="grid">
-          <input id="rp_new" class="input" type="password" placeholder="New password" autocomplete="new-password">
-          <input id="rp_confirm" class="input" type="password" placeholder="Confirm new password" autocomplete="new-password">
+          <div class="fl-field">
+            <input id="rp_new" class="input" type="password" placeholder=" " autocomplete="new-password">
+            <label for="rp_new">New password</label>
+          </div>
+          <div class="fl-field">
+            <input id="rp_confirm" class="input" type="password" placeholder=" " autocomplete="new-password">
+            <label for="rp_confirm">Confirm new password</label>
+          </div>
           <button id="rp_update" class="btn">Update password</button>
           <p id="rp_msg" class="help"></p>
         </div>
@@ -348,9 +363,18 @@ async function renderChangePassword(user){
       <div class="host-wrap">
         <h2>Change password</h2>
         <div id="cpCard" class="grid">
-          <input id="cp_current" class="input" type="password" placeholder="Current password" autocomplete="current-password">
-          <input id="cp_new" class="input" type="password" placeholder="New password" autocomplete="new-password">
-          <input id="cp_confirm" class="input" type="password" placeholder="Confirm new password" autocomplete="new-password">
+          <div class="fl-field">
+              <input id="cp_current" class="input" type="password" placeholder=" " autocomplete="current-password">
+              <label for="cp_current">Current password</label>
+            </div>
+            <div class="fl-field">
+              <input id="cp_new" class="input" type="password" placeholder=" " autocomplete="new-password">
+              <label for="cp_new">New password</label>
+            </div>
+            <div class="fl-field">
+              <input id="cp_confirm" class="input" type="password" placeholder=" " autocomplete="new-password">
+              <label for="cp_confirm">Confirm new password</label>
+            </div>
           <button id="cp_update" class="btn">Update</button>
           <div class="inline-actions">
             <a class="help" href="#/account">Back to Account</a>
@@ -417,9 +441,20 @@ async function renderProfile(user){
       <div class="host-wrap">
         <h2>Update profile</h2>
         <div id="pfCard" class="grid">
-          <input id="pf_name" class="input" placeholder="Name" value="${name || ''}" autocomplete="name">
-          <input id="pf_email" class="input" placeholder="Email" value="${user.email}" readonly>
-          <input id="pf_dob" class="input" type="date" value="${birthdate || ''}">
+          <div class="fl-field">
+              <input id="pf_name" class="input" placeholder=" " value="${name || ''}" autocomplete="name">
+              <label for="pf_name">Name</label>
+            </div>
+            
+            <div class="fl-field">
+              <input id="pf_email" class="input" placeholder=" " value="${user.email}" readonly>
+              <label for="pf_email">Email</label>
+            </div>
+            
+            <div class="fl-field">
+              <input id="pf_dob" class="input" type="date" value="${birthdate || ''}" required>
+              <label for="pf_dob">Birthdate</label>
+            </div>
           <div class="inline-actions">
             <label class="inline-actions"><input type="radio" name="pf_gender" value="male" ${genderUi==='male'?'checked':''}> <span>Male</span></label>
             <label class="inline-actions"><input type="radio" name="pf_gender" value="female" ${genderUi==='female'?'checked':''}> <span>Female</span></label>
@@ -484,17 +519,25 @@ async function renderRegister(){
           <label class="help" style="color:var(--green);font-weight:700;grid-column:1;grid-row:1;">Create a new account</label>
           <a href="#/login" class="help" style="text-decoration:underline;grid-column:2;grid-row:1;">I have an account</a>
           <!-- Row 2 -->
-          <input id="reg_name" class="input" placeholder="Name" autocomplete="name" style="grid-column:1;grid-row:2;">
-          <input id="reg_dob" class="input" type="date" style="grid-column:2;grid-row:2;">
-          <!-- Row 3 -->
-          <div class="inline-actions" style="grid-column:1;grid-row:3;">
-            <label class="inline-actions"><input type="radio" name="reg_gender" value="male"> <span>Male</span></label>
-            <label class="inline-actions"><input type="radio" name="reg_gender" value="female"> <span>Female</span></label>
+          <div class="fl-field" style="grid-column:1;grid-row:2;">
+            <input id="reg_name" class="input" placeholder=" " autocomplete="name">
+            <label for="reg_name">Name</label>
           </div>
-          <div style="grid-column:2;grid-row:3;"></div>
-          <!-- Row 4: Email / Password aligned -->
-          <input id="reg_email" class="input" placeholder="Email" type="email" autocomplete="email" style="grid-column:1;grid-row:4;">
-          <input id="reg_password" class="input" placeholder="Password" type="password" autocomplete="new-password" style="grid-column:2;grid-row:4;">
+          
+          <div class="fl-field" style="grid-column:2;grid-row:2;">
+            <input id="reg_dob" class="input" type="date" required>
+            <label for="reg_dob">Birthdate</label>
+          </div>
+          
+          <div class="fl-field" style="grid-column:1;grid-row:4;">
+            <input id="reg_email" class="input" placeholder=" " type="email" autocomplete="email">
+            <label for="reg_email">Email</label>
+          </div>
+          
+          <div class="fl-field" style="grid-column:2;grid-row:4;">
+            <input id="reg_password" class="input" placeholder=" " type="password" autocomplete="new-password">
+            <label for="reg_password">Password</label>
+          </div>
         </div>
 
         <div class="grid" style="gap:14px;margin-top:16px;">
