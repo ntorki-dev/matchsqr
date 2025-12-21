@@ -504,7 +504,7 @@ if (role === 'host') {
   crownImg.alt = 'host';
   crownImg.width = 16;
   crownImg.height = 16;
-  el.appendChild(crownImg);
+  initialsDiv.appendChild(crownImg);
 }
 
 // Name
