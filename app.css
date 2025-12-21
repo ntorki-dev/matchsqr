@@ -510,6 +510,7 @@ body.is-game #answerWide {
   justify-content:flex-start;
   gap:4px;
   margin:8px 0;
+  position: relative;
 }
 /* Ensure both side columns center this widget */
 .seats-left .seat-item,
@@ -534,6 +535,17 @@ body.is-game #answerWide {
   box-sizing:border-box;
   transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
 }
+.seat-crown{
+  position:absolute;
+  left:50%;
+  top:28px;                
+  transform:translateX(-50%) rotate(-12deg);
+  width:16px;
+  height:16px;
+  pointer-events:none;
+  z-index:2;
+}
+
 /* Highlight when it is the participant's turn, piggybacks on existing .is-turn */
 .seat-item.is-turn .seat-initials{
   background: var(--green);
