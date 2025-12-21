@@ -538,8 +538,8 @@ body.is-game #answerWide {
 }
 .seat-crown{
   position:absolute;
-  top:-9px;
-  left:-9px;
+  top:-6px;
+  left:-6px;
   transform: rotate(-42deg);
   width:16px;
   height:16px;
