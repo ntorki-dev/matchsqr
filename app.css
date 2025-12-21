@@ -540,7 +540,7 @@ body.is-game #answerWide {
   position:absolute;
   top:-9px;
   left:-9px;
-  transform: rotate(-30deg);
+  transform: rotate(-42deg);
   width:16px;
   height:16px;
   pointer-events:none;
